@@ -1,7 +1,7 @@
 window.onload = start;
 
 function start() {
-	run(20);
+	run(15);
 }
 
 function run(rate) {
@@ -18,11 +18,15 @@ function run(rate) {
 	var nh = [[-1, -1], [ 0, -1], [ 1, -1],
 			  [-1,  0],           [ 1,  0],
 		      [-1,  1], [ 0,  1], [ 1,  1]];
-	//var ru = [0, 0, -1, -1, 1, 1, 0, 0, 0];
-	var ru = [0, 0, -1, 1, 0, 0, 0, 0, 0];
-	var wr = true;
+			  
+	var ru = [0, 0, -1, -1, 1, 1, 0, 0, 0];
+	//var ru = [0, 0, -1, 1, 0, 0, 0, 0, 0];
+	
+	var wr = false;
 	var nm = "Test Table";
 	var li = -1;
+	
+	/*
 	var c = [[0,0,0,0,0,0,0,0],
 			 [0,0,0,0,0,0,0,0],
 			 [0,0,1,0,0,0,0,0],
@@ -31,9 +35,11 @@ function run(rate) {
 			 [0,0,0,0,0,0,0,0],
 			 [0,0,0,0,0,0,0,0],
 			 [0,0,0,0,0,0,0,0]];
+	*/
 	
 	var table = new AutomataTable(w, h, st, ru, nh, wr, nm, li, ct, sc, gp);
 	
+	//table.initPreset(c);
 	table.initRandom();
 	
 	setInterval(function() {

@@ -42,12 +42,11 @@ function AutomataTable(w, h, st, ru, nh, wr, nm, li, ct, sc, gp) {
 		}
 	}
 	
-	//NOT LOADING c
 	this.initPreset = function(c) {
 		this.gen = 0;
 		
 		this.cells = c;
-		this.width = c.length[0];
+		this.width = c[0].length;
 		this.height = c.length;
 		
 		for(var j = 0; j < this.height; j++) {
